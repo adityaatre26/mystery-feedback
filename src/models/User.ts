@@ -26,7 +26,7 @@ export interface User extends Document {
   verifyCodeExpiry: Date;
   isVerified: boolean;
   isAcceptingMessage: boolean;
-  message: Message[]; // This is an array of messages received by the user
+  messages: Message[]; // This is an array of messages received by the user
 }
 
 const UserSchema: Schema<User> = new Schema({
@@ -62,7 +62,7 @@ const UserSchema: Schema<User> = new Schema({
     required: true,
     default: true,
   },
-  message: [MessageSchema],
+  messages: [MessageSchema],
 });
 
 // When exporting the first condition is for the case when the model is already defined
